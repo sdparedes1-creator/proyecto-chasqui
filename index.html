@@ -9,8 +9,8 @@
         .container { max-width: 900px; width: 100%; background: #111827; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #1f2937; text-align: center; }
         h1 { color: #3b82f6; margin-bottom: 5px; font-size: 2rem; }
         .subtitle { color: #9ca3af; margin-bottom: 25px; font-size: 1rem; }
-        .video-box { width: 100%; max-width: 750px; margin: 0 auto; border: 4px solid #1f2937; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 15px rgba(0,0,0,0.6); }
-        video { width: 100%; display: block; }
+        .video-box { width: 100%; max-width: 750px; margin: 0 auto; border: 4px solid #1f2937; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 15px rgba(0,0,0,0.6); position: relative; padding-top: 56.25%; /* Relación de aspecto 16:9 */ }
+        video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; }
         .controls { margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
         button { background: #2563eb; color: white; border: none; padding: 14px 28px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
         button:hover { background: #1d4ed8; transform: translateY(-2px); }
@@ -30,40 +30,41 @@
     <p class="subtitle">Materia: Interfaces y Multimedia - Redes de Comunicación del Tahuantinsuyo</p>
     
     <div class="video-box">
-        <video id="video-chasqui" controls>
-            <!-- ENLACE DIRECTO AL VIDEO DEL INTEGRANTE 4 (Sincronizado en Canva) -->
-            <source src="https://docs.google.com/uc?export=download&id=ID_DE_NUESTRO_VIDEO_EN_DRIVE" type="video/mp4">
+        <!-- El reproductor multimedia cargará dinámicamente cada recurso de red de Google Drive -->
+        <video id="video-chasqui" controls autoplay>
+            <source id="video-source" src="https://docs.google.com/uc?export=download&id=1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK" type="video/mp4">
             Tu navegador no soporta video de HTML5.
         </video>
     </div>
 
     <div class="controls">
-        <button class="btn-reset" onclick="cambiarEscena(0)">🔄 Reiniciar Historial</button>
-        <button class="btn-optA" onclick="cambiarEscena(10)">⛰️ Opción A: Ruta de la Montaña</button>
-        <button class="btn-optB" onclick="cambiarEscena(20)">🌾 Opción B: Ruta del Valle</button>
+        <button class="btn-reset" onclick="cargarVideo('inicio')">🔄 Reiniciar (Introducción)</button>
+        <button class="btn-optA" onclick="cargarVideo('montana')">⛰️ Opción A: Ruta de la Montaña</button>
+        <button class="btn-optB" onclick="cargarVideo('valle')">🌾 Opción B: Ruta del Valle</button>
     </div>
 
     <div class="footer-info">
-        <p>Interfaz de Red Multicapa construida en HTML5 y JavaScript Nativo. Despliegue síncrono en GitHub Pages.</p>
+        <p>Interfaz de Red Estructurada construida en HTML5 y JavaScript Nativo. Despliegue síncrono en GitHub Pages.</p>
     </div>
 </div>
 
 <script>
-    const video = document.getElementById('video-chasqui');
+    // Diccionario de nodos multimedia conectados directamente a tus IDs de Drive
+    const fuentesVideo = {
+        inicio: "https://docs.google.com/uc?export=download&id=1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK",
+        montana: "https://docs.google.com/uc?export=download&id=10jYdT-bAB5zJc2WMwNf9NRGeuf32F3Cu",
+        valle: "https://docs.google.com/uc?export=download&id=1sX0Gc2MSDbmX8PGBEtk6xbHn0Lmoc95N"
+    };
 
-    function cambiarEscena(segundo) {
-        video.currentTime = segundo;
+    const video = document.getElementById('video-chasqui');
+    const source = document.getElementById('video-source');
+
+    function cargarVideo(nodo) {
+        // Manipulación dinámica del DOM para alterar la fuente de transmisión asíncrona
+        source.src = fuentesVideo[nodo];
+        video.load();
         video.play();
     }
-    
-    video.addEventListener('timeupdate', function() {
-        if (video.currentTime >= 9.9 && video.currentTime < 10) {
-            video.pause();
-        }
-        else if (video.currentTime >= 19.9 && video.currentTime < 20) {
-            video.pause();
-        }
-    });
 </script>
 
 </body>
