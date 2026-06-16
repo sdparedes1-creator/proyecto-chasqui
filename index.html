@@ -9,8 +9,8 @@
         .container { max-width: 900px; width: 100%; background: #111827; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #1f2937; text-align: center; }
         h1 { color: #3b82f6; margin-bottom: 5px; font-size: 2rem; }
         .subtitle { color: #9ca3af; margin-bottom: 25px; font-size: 1rem; }
-        .video-box { width: 100%; max-width: 750px; margin: 0 auto; border: 4px solid #1f2937; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 15px rgba(0,0,0,0.6); position: relative; padding-top: 56.25%; /* Relación de aspecto 16:9 */ }
-        video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; }
+        .video-box { width: 100%; max-width: 750px; margin: 0 auto; border: 4px solid #1f2937; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 15px rgba(0,0,0,0.6); position: relative; padding-top: 56.25%; }
+        iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
         .controls { margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
         button { background: #2563eb; color: white; border: none; padding: 14px 28px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
         button:hover { background: #1d4ed8; transform: translateY(-2px); }
@@ -30,11 +30,8 @@
     <p class="subtitle">Materia: Interfaces y Multimedia - Redes de Comunicación del Tahuantinsuyo</p>
     
     <div class="video-box">
-        <!-- El reproductor multimedia cargará dinámicamente cada recurso de red de Google Drive -->
-        <video id="video-chasqui" controls autoplay>
-            <source id="video-source" src="https://docs.google.com/uc?export=download&id=1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK" type="video/mp4">
-            Tu navegador no soporta video de HTML5.
-        </video>
+        <!-- Contenedor iframe para asegurar la reproducción directa desde Drive sin bloqueos de red -->
+        <iframe id="reproductor-chasqui" src="https://drive.google.com/file/d/1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK/preview" allow="autoplay"></iframe>
     </div>
 
     <div class="controls">
@@ -49,21 +46,18 @@
 </div>
 
 <script>
-    // Diccionario de nodos multimedia conectados directamente a tus IDs de Drive
+    // Enlaces de previsualización nativos para asegurar compatibilidad de red
     const fuentesVideo = {
-        inicio: "https://docs.google.com/uc?export=download&id=1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK",
-        montana: "https://docs.google.com/uc?export=download&id=10jYdT-bAB5zJc2WMwNf9NRGeuf32F3Cu",
-        valle: "https://docs.google.com/uc?export=download&id=1sX0Gc2MSDbmX8PGBEtk6xbHn0Lmoc95N"
+        inicio: "https://drive.google.com/file/d/1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK/preview",
+        montana: "https://drive.google.com/file/d/10jYdT-bAB5zJc2WMwNf9NRGeuf32F3Cu/preview",
+        valle: "https://drive.google.com/file/d/1sX0Gc2MSDbmX8PGBEtk6xbHn0Lmoc95N/preview"
     };
 
-    const video = document.getElementById('video-chasqui');
-    const source = document.getElementById('video-source');
+    const reproductor = document.getElementById('reproductor-chasqui');
 
     function cargarVideo(nodo) {
-        // Manipulación dinámica del DOM para alterar la fuente de transmisión asíncrona
-        source.src = fuentesVideo[nodo];
-        video.load();
-        video.play();
+        // Actualización síncrona del recurso de la interfaz
+        reproductor.src = fuentesVideo[nodo];
     }
 </script>
 
