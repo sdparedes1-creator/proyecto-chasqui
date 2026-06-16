@@ -3,61 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interfaz Multimedia - El Mensaje del Chasqui</title>
+    <title>El Mensaje del Chasqui</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0b0f19; color: #f3f4f6; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
-        .container { max-width: 900px; width: 100%; background: #111827; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); border: 1px solid #1f2937; text-align: center; }
-        h1 { color: #3b82f6; margin-bottom: 5px; font-size: 2rem; }
-        .subtitle { color: #9ca3af; margin-bottom: 25px; font-size: 1rem; }
-        .video-box { width: 100%; max-width: 750px; margin: 0 auto; border: 4px solid #1f2937; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 15px rgba(0,0,0,0.6); position: relative; padding-top: 56.25%; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ffffff; color: #111111; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; }
+        .container { max-width: 1100px; width: 100%; background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,113,61,0.15); border: 3px solid #00713d; }
+        h1 { color: #00713d; margin: 0 0 25px 0; font-size: 2.2rem; text-align: center; font-weight: bold; text-transform: uppercase; border-bottom: 4px solid #00713d; padding-bottom: 10px; }
+        
+        .workspace { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media(min-width: 768px) { .workspace { grid-template-columns: 60% 40%; } }
+        
+        .video-box { width: 100%; background: #000000; border: 4px solid #00713d; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2); position: relative; padding-top: 56.25%; }
         iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
-        .controls { margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        button { background: #2563eb; color: white; border: none; padding: 14px 28px; font-size: 1rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
-        button:hover { background: #1d4ed8; transform: translateY(-2px); }
-        button.btn-reset { background: #4b5563; }
-        button.btn-reset:hover { background: #374151; }
-        button.btn-optA { background: #dc2626; }
-        button.btn-optA:hover { background: #b91c1c; }
-        button.btn-optB { background: #059669; }
-        button.btn-optB:hover { background: #047857; }
-        .footer-info { margin-top: 30px; border-top: 1px solid #1f2937; padding-top: 20px; color: #6b7280; font-size: 0.85rem; }
+        
+        .data-panel { background: #f4f9f5; border: 2px solid #00713d; border-radius: 8px; padding: 20px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; }
+        .data-panel h3 { color: #00713d; margin-top: 0; border-bottom: 2px solid #00713d; padding-bottom: 8px; font-size: 1.1rem; text-transform: uppercase; }
+        .metadata-box { font-size: 0.95rem; line-height: 1.6; color: #222222; }
+        .highlight { color: #00713d; font-weight: bold; }
+
+        .controls { margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; width: 100%; grid-column: span 1; }
+        @media(min-width: 768px) { .controls { grid-column: span 2; } }
+        
+        /* Panel inferior de Prompts */
+        .prompt-panel { margin-top: 25px; background: #ffffff; border: 2px dashed #00713d; border-radius: 8px; padding: 20px; text-align: left; width: 100%; box-sizing: border-box; }
+        .prompt-panel h4 { color: #00713d; margin: 0 0 10px 0; font-size: 1.1rem; text-transform: uppercase; font-weight: bold; }
+        .prompt-label { font-size: 0.9rem; font-weight: bold; color: #4b5563; margin-top: 10px; margin-bottom: 4px; text-transform: uppercase; }
+        .prompt-code { background: #f3f4f6; border-left: 4px solid #00713d; padding: 12px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; color: #374151; border-radius: 0 4px 4px 0; white-space: pre-wrap; word-break: break-all; margin: 0 0 12px 0; }
+
+        button { background: #00713d; color: white; border: 2px solid #00713d; padding: 14px 24px; font-size: 0.95rem; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.1); flex: 1; min-width: 200px; text-transform: uppercase; }
+        button:hover { background: #ffffff; color: #00713d; transform: translateY(-2px); }
+        button.btn-reset { background: #ffffff; color: #111111; border: 2px solid #4b5563; }
+        button.btn-reset:hover { background: #4b5563; color: #ffffff; }
+        
+        .footer-info { margin-top: 30px; border-top: 2px solid #00713d; padding-top: 20px; color: #00713d; font-weight: bold; font-size: 0.9rem; text-align: center; width: 100%; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Caso de Estudio: El Mensaje del Chasqui</h1>
-    <p class="subtitle">Materia: Interfaces y Multimedia - Redes de Comunicación del Tahuantinsuyo</p>
+    <h1>El Mensaje del Chasqui</h1>
     
-    <div class="video-box">
-        <!-- Contenedor iframe para asegurar la reproducción directa desde Drive sin bloqueos de red -->
-        <iframe id="reproductor-chasqui" src="https://drive.google.com/file/d/1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK/preview" allow="autoplay"></iframe>
+    <div class="workspace">
+        <!-- LADO IZQUIERDO: El Video Activo -->
+        <div class="video-box">
+            <iframe id="reproductor-chasqui" src="https://drive.google.com/file/d/1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK/preview" allow="autoplay"></iframe>
+        </div>
+
+        <!-- LADO DERECHO: Explicación Técnica Dinámica -->
+        <div class="data-panel">
+            <div>
+                <h3 id="panel-titulo">Análisis: Nodo de Introducción</h3>
+                <div class="metadata-box" id="panel-cuerpo">
+                    <p><span class="highlight">Procesamiento de Google Flow:</span> El motor generó un plano general descriptivo del Cusco antiguo. Se definieron parámetros de iluminación natural de amanecer y una consistencia de personaje fija para el renderizado del Chasqui.</p>
+                    <p><span class="highlight">Sincronización de Videos:</span> Este activo actúa como el origen del flujo lógico. Se estableció un metraje independiente coordinado con la banda sonora incidental en formato MP3, manteniendo la ganancia atenuada al 20% para asegurar la claridad acústica.</p>
+                </div>
+            </div>
+            <div style="font-size: 0.85rem; color: #00713d; margin-top: 15px; border-top: 1px dashed #00713d; padding-top: 10px; font-weight: bold;">
+                UNIVERSIDAD DE LAS FUERZAS ARMADAS ESPE
+            </div>
+        </div>
+
+        <!-- ABAJO: Botones de Navegación Ramificada -->
+        <div class="controls">
+            <button class="btn-reset" onclick="cargarVideo('inicio')">🔄 Reiniciar (Introducción)</button>
+            <button onclick="cargarVideo('montana')">⛰️ Opción A: Ruta de la Montaña</button>
+            <button onclick="cargarVideo('valle')">🌾 Opción B: Ruta del Valle</button>
+        </div>
     </div>
 
-    <div class="controls">
-        <button class="btn-reset" onclick="cargarVideo('inicio')">🔄 Reiniciar (Introducción)</button>
-        <button class="btn-optA" onclick="cargarVideo('montana')">⛰️ Opción A: Ruta de la Montaña</button>
-        <button class="btn-optB" onclick="cargarVideo('valle')">🌾 Opción B: Ruta del Valle</button>
+    <!-- SECCIÓN INFERIOR: Bitácora de Ingeniería de Prompts (Google Flow) -->
+    <div class="prompt-panel">
+        <h4>Ingeniería de Prompts en Google Flow</h4>
+        
+        <div class="prompt-label">Prompt Original (Inglés)</div>
+        <pre class="prompt-code" id="prompt-en">Cinematic wide shot of ancient Cusco town, Inca architecture, stone walls and narrow paths. An indigenous young courier runner (Chasqui) standing, holding a Quipu. Warm morning sunlight, sunrise shadows, photorealistic, 4k resolution, high consistent details, 24fps film look.</pre>
+        
+        <div class="prompt-label">Traducción Descriptiva (Español)</div>
+        <pre class="prompt-code" id="prompt-es">Plano general cinematográfico de la antigua ciudad de Cusco, arquitectura inca, muros de piedra y caminos estrechos. Un joven mensajero indígena (Chasqui) de pie, sosteniendo un Quipu. Luz solar cálida de la mañana, sombras de amanecer, fotorrealista, resolución 4k, detalles altamente consistentes, aspecto de película de 24 cuadros por segundo.</pre>
     </div>
 
     <div class="footer-info">
-        <p>Interfaz de Red Estructurada construida en HTML5 y JavaScript Nativo. Despliegue síncrono en GitHub Pages.</p>
+        <p>Estructura de Controles Dinámicos del DOM vía JavaScript Nativo</p>
     </div>
 </div>
 
 <script>
-    // Enlaces de previsualización nativos para asegurar compatibilidad de red
     const fuentesVideo = {
         inicio: "https://drive.google.com/file/d/1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK/preview",
         montana: "https://drive.google.com/file/d/10jYdT-bAB5zJc2WMwNf9NRGeuf32F3Cu/preview",
         valle: "https://drive.google.com/file/d/1sX0Gc2MSDbmX8PGBEtk6xbHn0Lmoc95N/preview"
     };
 
+    const textosTecnicos = {
+        inicio: {
+            titulo: "Análisis: Nodo de Introducción",
+            cuerpo: `<p><span class="highlight">Procesamiento de Google Flow:</span> El motor generó un plano general descriptivo del Cusco antiguo. Se definieron parámetros de iluminación natural de amanecer y una consistencia de personaje fija para el renderizado del Chasqui.</p>
+                     <p><span class="highlight">Sincronización de Videos:</span> Este activo actúa como el origen del flujo lógico. Se estableció un metraje independiente coordinado con la banda sonora incidental en formato MP3, manteniendo la ganancia atenuada al 20% para asegurar la claridad acústica.</p>`,
+            promptEn: "Cinematic wide shot of ancient Cusco town, Inca architecture, stone walls and narrow paths. An indigenous young courier runner (Chasqui) standing, holding a Quipu. Warm morning sunlight, sunrise shadows, photorealistic, 4k resolution, high consistent details, 24fps film look.",
+            promptEs: "Plano general cinematográfico de la antigua ciudad de Cusco, arquitectura inca, muros de piedra y caminos estrechos. Un joven mensajero indígena (Chasqui) de pie, sosteniendo un Quipu. Luz solar cálida de la mañana, sombras de amanecer, fotorrealista, resolución 4k, detalles altamente consistentes, aspecto de película de 24 cuadros por segundo."
+        },
+        montana: {
+            titulo: "Análisis: Nodo Opción A (Montaña)",
+            cuerpo: `<p><span class="highlight">Procesamiento de Google Flow:</span> Se aplicaron prompts modificadores de clima e iluminación extrema en la cordillera. El flujo calculó la física de partículas para la nieve en las cumbres y un paneo de cámara lateral de velocidad constante para simular la carrera.</p>
+                     <p><span class="highlight">Sincronización de Videos:</span> Al interactuar con el control, JavaScript altera el origen del componente. El audio mantiene su continuidad lineal exacta al 20% de ganancia, evitando cortes abruptos entre transiciones de archivos independientes.</p>`,
+            promptEn: "Cinematic medium tracking shot, an Inca Chasqui runner running fast along a stone path on a high snowy mountain ridge, steep cliffs, dramatic extreme weather, falling snowflakes particle physics, morning golden hour backlight, cinematic motion blur, realistic textures.",
+            promptEs: "Plano de seguimiento medio cinematográfico, un corredor inca Chasqui corriendo rápido por un camino de piedra en una cresta alta y nevada de la montaña, acantilados empinados, clima extremo dramático, física de partículas de copos de nieve cayendo, contraluz de la hora dorada de la mañana, desenfoque de movimiento cinematográfico, texturas realistas."
+        },
+        valle: {
+            titulo: "Análisis: Nodo Opción B (Valle)",
+            cuerpo: `<p><span class="highlight">Procesamiento de Google Flow:</span> Se modificó el entorno hacia un ecosistema agrícola de terrazas incas. Se configuró iluminación cenital para luz de mediodía y un plano detalle enfocado en la entrega física del quipu a la autoridad.</p>
+                     <p><span class="highlight">Sincronización de Videos:</span> El entrelazado de esta secuencia alternativa se gestiona mediante la actualización síncrona del contenedor. La pista musical unificada se mantiene estable al 20%, garantizando coherencia formal durante la experiencia.</p>`,
+            promptEn: "Cinematic close-up shot, an Inca Chasqui arriving at a sunny green valley agricultural terrace, handing over a Quipu to a local leader authority, bright zenith mid-day sunlight, rich contrast, documentary style film look, highly detailed environments.",
+            promptEs: "Primer plano cinematográfico, un Chasqui inca llegando a una terraza agrícola soleada en un valle verde, entregando un Quipu a una autoridad o líder local, luz solar cenital brillante del mediodía, rico contraste, aspecto de película de estilo documental, entornos altamente detallados."
+        }
+    };
+
     const reproductor = document.getElementById('reproductor-chasqui');
+    const panelTitulo = document.getElementById('panel-titulo');
+    const panelCuerpo = document.getElementById('panel-cuerpo');
+    const promptEn = document.getElementById('prompt-en');
+    const promptEs = document.getElementById('prompt-es');
 
     function cargarVideo(nodo) {
-        // Actualización síncrona del recurso de la interfaz
         reproductor.src = fuentesVideo[nodo];
+        panelTitulo.innerText = textosTecnicos[nodo].titulo;
+        panelCuerpo.innerHTML = textosTecnicos[nodo].cuerpo;
+        promptEn.innerText = textosTecnicos[nodo].promptEn;
+        promptEs.innerText = textosTecnicos[nodo].promptEs;
     }
 </script>
 
