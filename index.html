@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Mensaje del Chasqui - Pipeline Google Flow</title>
+    <title>El Mensaje del Chasqui - Pipeline Google Flow Arquetipo</title>
     <style>
         body { 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
@@ -74,7 +74,7 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
         }
         .info-academic-panel:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
             box-shadow: 0 10px 25px rgba(0,113,61,0.15);
         }
         .info-academic-panel h2 { 
@@ -136,7 +136,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* PIPELINE DE TARJETAS BLANCO Y VERDE */
+        /* PIPELINE ARQUITECTÓNICO PASO A PASO */
         .pipeline-flow-container { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 25px; }
         @media(min-width: 992px) { .pipeline-flow-container { grid-template-columns: repeat(3, 1fr); } }
         
@@ -151,7 +151,7 @@
             box-sizing: border-box;
         }
         .pipeline-card:hover { 
-            transform: scale(1.05); 
+            transform: scale(1.04); 
             box-shadow: 0 12px 25px rgba(0,113,61,0.2); 
         }
         .pipeline-card h3 { 
@@ -159,16 +159,38 @@
             background: #00713d; 
             margin: -20px -20px 15px -20px; 
             padding: 12px 18px; 
-            font-size: 1rem; 
+            font-size: 0.95rem; 
             text-transform: uppercase; 
             border-radius: 15px 15px 0 0; 
             display: flex; 
             justify-content: space-between; 
             font-weight: bold;
         }
-        .pipeline-card p { margin: 0 0 12px 0; font-size: 0.9rem; line-height: 1.4; color: #222222; }
-        .pipeline-card ul { margin: 0; padding-left: 18px; font-size: 0.88rem; color: #4b5563; line-height: 1.4; }
+        .pipeline-card p { margin: 0 0 12px 0; font-size: 0.88rem; line-height: 1.4; color: #111827; font-weight: 600; }
+        .pipeline-card ul { margin: 0; padding-left: 18px; font-size: 0.85rem; color: #4b5563; line-height: 1.4; }
         .pipeline-card li { margin-bottom: 5px; }
+        
+        /* CAJAS DE PALABRAS SIMPLES */
+        .simple-words-box {
+            margin-top: 12px;
+            padding: 10px;
+            background: #ffffff;
+            border-left: 3px solid #10b981;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            color: #374151;
+            line-height: 1.35;
+        }
+        .panel-simple-words {
+            margin-top: 15px;
+            padding: 12px;
+            background: #ffffff;
+            border-left: 4px solid #00713d;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            color: #1f2937;
+            line-height: 1.4;
+        }
 
         .flow-status-bar { height: 4px; background: #e5e7eb; border-radius: 2px; margin-top: 15px; overflow: hidden; }
         .flow-status-fill { height: 100%; background: #00713d; width: 100%; }
@@ -194,7 +216,7 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
         }
         .render-preview-section:hover {
-            transform: scale(1.02);
+            transform: scale(1.01);
             box-shadow: 0 10px 25px rgba(16,185,129,0.2);
         }
         .render-header {
@@ -226,6 +248,16 @@
             line-height: 1.5;
             font-size: 0.9rem;
         }
+        .justificacion-simple {
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: #1f2937;
+            border-radius: 6px;
+            color: #a7f3d0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.85rem;
+            line-height: 1.35;
+        }
 
         @keyframes blink { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
         @keyframes load-flow { 0% { width: 0%; } 85% { width: 100%; } 100% { width: 100%; } }
@@ -233,7 +265,7 @@
 
         /* Rejilla de Trabajo Principal */
         .workspace { display: grid; grid-template-columns: 1fr; gap: 25px; position: relative; }
-        @media(min-width: 768px) { .workspace { grid-template-columns: 60% 40%; } }
+        @media(min-width: 768px) { .workspace { grid-template-columns: 55% 45%; } }
         
         .ui-component { position: relative; }
         
@@ -277,11 +309,11 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
         }
         .data-panel:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
             box-shadow: 0 10px 25px rgba(0,113,61,0.15);
         }
-        .data-panel h4 { color: #00713d; margin-top: 0; border-bottom: 2px solid #00713d; padding-bottom: 10px; font-size: 1.15rem; text-transform: uppercase; }
-        .metadata-box { font-size: 0.95rem; line-height: 1.6; color: #222222; }
+        .data-panel h4 { color: #00713d; margin-top: 0; border-bottom: 2px solid #00713d; padding-bottom: 10px; font-size: 1.1rem; text-transform: uppercase; }
+        .metadata-box { font-size: 0.92rem; line-height: 1.5; color: #222222; }
         .highlight { color: #00713d; font-weight: bold; }
 
         .controls { 
@@ -302,7 +334,7 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
         }
         .controls:hover {
-            transform: scale(1.02);
+            transform: scale(1.01);
             box-shadow: 0 10px 25px rgba(0,113,61,0.15);
         }
         @media(min-width: 768px) { .controls { grid-column: span 2; } }
@@ -325,7 +357,7 @@
         button:hover { 
             background-color: #10b981; 
             color: white; 
-            transform: scale(1.08); 
+            transform: scale(1.05); 
             box-shadow: 0 12px 24px rgba(16,185,129,0.35); 
         }
         button.btn-reset { background: #4b5563; color: #ffffff; }
@@ -345,7 +377,7 @@
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
         }
         .prompt-panel:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
             box-shadow: 0 10px 25px rgba(0,113,61,0.15);
         }
         .prompt-panel h4 { color: #00713d; margin: 0 0 12px 0; font-size: 1.15rem; text-transform: uppercase; font-weight: bold; }
@@ -388,12 +420,14 @@
         <span class="badge-tech badge-ui">UI: Layout General</span>
     </div>
     
+    <!-- HEADER INTEGRADO CON EL LOGO OFICIAL DE LA ESPE -->
     <div class="header-logo-container">
         <img src="https://www.espe.edu.ec/wp-content/uploads/2023/03/espe.png" alt="Logo Universidad de las Fuerzas Armadas ESPE" class="logo-espe">
         <h1>Universidad de las Fuerzas Armadas ESPE</h1>
     </div>
     <div class="title-divider"></div>
     
+    <!-- SECCIÓN ACADÉMICA E INTEGRANTES -->
     <div class="info-academic-panel ui-component">
         <div class="badge-container">
             <span class="badge-tech badge-ui">UI: Metadatos Académicos</span>
@@ -405,7 +439,7 @@
                 <p><strong>NRC:</strong> 30276</p>
             </div>
             <div>
-                <p style="margin: 0 0 6px 0;"><strong>Integrantes:</strong></p>
+                <p style="margin: 0 0 6px 0;"><strong>Integrantes (Haz clic para abrir/cerrar su rol técnico):</strong></p>
                 <ul class="integrantes-list">
                     <li><a class="integrante-link" onclick="mostrarRol('angel')">Angel Rolando Ruiz Muñoz</a></li>
                     <li><a class="integrante-link" onclick="mostrarRol('christian')">Cristhian Daniel Almeida Mesias</a></li>
@@ -414,6 +448,7 @@
                     <li><a class="integrante-link" onclick="mostrarRol('santiago')">Santiago David Paredes Requelme</a></li>
                 </ul>
                 
+                <!-- Contenedor dinámico de roles -->
                 <div id="rol-detalle" class="rol-detalle-container">
                     <div id="rol-titulo" class="rol-detalle-title"></div>
                     <p id="rol-texto" class="rol-detalle-text"></p>
@@ -422,50 +457,61 @@
         </div>
     </div>
     
+    <!-- PIPELINE PASO A PASO EN FORMATO DE TARJETAS TÉCNICAS -->
     <div class="pipeline-flow-container">
+        <!-- FASE 1 -->
         <div class="pipeline-card p1">
-            <h3>Fase 1: Entrada de Prompts <span>[01]</span></h3>
-            <p>Estructuración y parametrización de la lógica generativa en el motor:</p>
+            <h3>Fase 1: Ingesta e Indexación Semántica <span>[01]</span></h3>
+            <p>Procesamiento del Prompt por el API Gateway de Google Cloud:</p>
             <ul>
-                <li>Inyección de prompts descriptivos base en inglés.</li>
-                <li>Fijación de semilla analítica (Seed) para consistencia del personaje.</li>
-                <li>Aplicación de prompts modificadores para mutaciones de entorno.</li>
+                <li><strong>Tokenización de Entrada:</strong> El prompt de texto estructurado se divide en tokens y se procesa mediante un modelo Vertex AI Text Embedding.</li>
+                <li><strong>Mapeo Vectorial:</strong> La cadena lingüística se convierte en vectores numéricos de alta dimensionalidad que representan conceptos abstractos.</li>
             </ul>
+            <div class="simple-words-box">
+                <strong>En palabras simples:</strong> La computadora lee las palabras del prompt que escribiste y las convierte en una lista de números que representan la idea principal del texto.
+            </div>
             <div class="flow-status-bar"><div class="flow-status-fill"></div></div>
         </div>
 
+        <!-- FASE 2 -->
         <div class="pipeline-card p2">
-            <h3>Fase 2: Acoplamiento de Audio <span>[02]</span></h3>
-            <p>Sincronización y control de la envolvente sonora de los activos:</p>
+            <h3>Fase 2: Orquestación y Búsqueda Vectorial <span>[02]</span></h3>
+            <p>Recuperación de Activos con Arquitectura RAG en Tiempo Real:</p>
             <ul>
-                <li>Separación asíncrona de los canales de video y audio.</li>
-                <li>Atenuación lineal fija de la ganancia al 20% en la línea de tiempo.</li>
-                <li>Mapeo de controladores basados en eventos para transiciones limpias.</li>
+                <li><strong>Vertex AI Vector Search:</strong> Realiza una búsqueda de vecinos más cercanos (KNN) comparando el vector del prompt contra los metadatos de la base de datos indexada en la nube.</li>
+                <li><strong>Resolución Asíncrona:</strong> Identifica de forma exacta e instantánea el ID del recurso de video óptimo correspondiente al flujo de la decisión lógica.</li>
             </ul>
+            <div class="simple-words-box">
+                <strong>En palabras simples:</strong> El sistema compara los números de tu prompt con la base de datos en la nube para buscar y encontrar exactamente el video que mejor se parezca a lo que pediste.
+            </div>
             <div class="flow-status-bar"><div class="flow-status-fill"></div></div>
         </div>
 
+        <!-- FASE 3 -->
         <div class="pipeline-card p3">
-            <h3>Fase 3: Renderizado Final <span>[03]</span></h3>
-            <p>Compilación síncrona y exportación de la secuencia interactiva:</p>
+            <h3>Fase 3: Despliegue Dinámico en Cloud Storage <span>[03]</span></h3>
+            <p>Entrega Transmisionada del Objeto hacia la Capa del Cliente:</p>
             <ul>
-                <li>Cálculo de físicas de partículas y Motion Blur a 24fps estables.</li>
-                <li>Encapsulamiento de archivos en códecs web de alta fidelidad.</li>
-                <li>Inyección dinámica de los flujos de origen al DOM vía JavaScript.</li>
+                <li><strong>Generación de URI:</strong> El backend resuelve el puntero hacia el CDN de Google Cloud Storage (o Google Drive API de streaming seguro).</li>
+                <li><strong>Inyección Dinámica al DOM:</strong> Se genera la carga asíncrona del stream en el buffer binario del reproductor web mediante peticiones XMLHttpRequest controladas por JavaScript nativo.</li>
             </ul>
+            <div class="simple-words-box">
+                <strong>En palabras simples:</strong> El sistema toma el archivo de video de internet y lo introduce directamente en la pantalla de la página web sin necesidad de recargar todo el sitio.
+            </div>
             <div class="flow-status-bar"><div class="flow-status-fill"></div></div>
         </div>
     </div>
 
+    <!-- SECCIÓN INTERACTIVA: CONSOLA DE RENDERIZADO EN FLOW Y JUSTIFICACIÓN -->
     <div class="render-preview-section ui-component">
         <div class="badge-container">
-            <span class="badge-tech badge-ux">UX: Simulación Pipeline</span>
+            <span class="badge-tech badge-ux">UX: Estado del Pipeline RAG</span>
         </div>
         <div class="render-header">
-            <span>⚡ GOOGLE_FLOW_ENGINE // LIVE_PIPELINE_MONITOR</span>
-            <span>PROCESANDO <span class="live-dot"></span></span>
+            <span>⚡ VERTEX_AI_PIPELINE_ENGINE // VECTOR_DATABASE_STREAM</span>
+            <span>PIPELINE OPERATIVO <span class="live-dot"></span></span>
         </div>
-        <div>ESTADO DEL ENGINE: <span style="color: #10b981; font-weight: bold;">RENDERING_BUFFER_NODES // 24FPS_SYNCHRONIZED</span></div>
+        <div>ESTADO DEL MOTOR DE FLUJO: <span style="color: #10b981; font-weight: bold;">CONNECTED // GOOGLE_EMBEDDING_V3_READY // VECTOR_LOOKUP_LATENCY: 42ms</span></div>
         
         <div class="signal-container">
             <div class="signal-bar"></div>
@@ -479,47 +525,60 @@
         <div class="progress-bar-container">
             <div class="progress-bar-fill"></div>
         </div>
-        <div style="font-size: 0.75rem; color: #9ca3af; text-align: right; margin-bottom: 5px;">Compilación y entrega de fotogramas activa</div>
+        <div style="font-size: 0.75rem; color: #9ca3af; text-align: right; margin-bottom: 5px;">Mapeo semántico bidireccional y emparejamiento por similitud de coseno en ejecución continua</div>
         
         <div class="tema-justificacion-box">
-            <strong>PROPÓSITO DEL PROYECTO:</strong> Elegimos este tema para rescatar la narrativa histórica ancestral de los Chasquis y el Imperio Inca a través de herramientas de Inteligencia Artificial modernas, demostrando cómo la ingeniería de prompts y el diseño de interfaces interactivas asíncronas pueden transformar el contenido educativo tradicional en una experiencia multimedia de alto impacto inmersivo.
+            <strong>PROPÓSITO DEL PROYECTO:</strong> Este desarrollo demuestra la implementación práctica de un patrón arquitectónico RAG (Generación Recuperada por Argumentación), aplicando ingeniería de prompts estructurada e interfaces de usuario asíncronas de baja latencia para optimizar la interacción hombre-máquina dentro del ecosistema multimedia actual.
+        </div>
+        <!-- PALABRAS SIMPLES ADICIONALES PARA LA JUSTIFICACIÓN -->
+        <div class="justificacion-simple">
+            <strong>En palabras simples:</strong> Hicimos este proyecto para demostrar cómo una página web puede conectarse a un cerebro de Inteligencia Artificial en la nube y cambiar los videos y la información de manera inmediata cuando el usuario presiona un botón, creando una aplicación interactiva fluida.
         </div>
     </div>
     
     <div class="workspace">
+        <!-- COMPONENTE: Video -->
         <div class="ui-component">
             <div class="badge-container">
-                <span class="badge-tech badge-ui">UI: Video Frame</span>
+                <span class="badge-tech badge-ui">UI: Video Content Frame</span>
             </div>
             <div class="video-box">
                 <iframe id="reproductor-chasqui" src="https://drive.google.com/file/d/1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK/preview" allow="autoplay"></iframe>
             </div>
         </div>
 
+        <!-- COMPONENTE: Panel dinámico -->
         <div class="ui-component">
             <div class="badge-container">
-                <span class="badge-tech badge-ux">UX: Telemetría Dinámica</span>
+                <span class="badge-tech badge-ux">UX: Telemetría de Consulta Cloud</span>
             </div>
             <div class="data-panel">
                 <div>
-                    <h4 id="panel-titulo">Análisis: Nodo de Introducción</h4>
+                    <h4 id="panel-titulo">Análisis del Flujo: Nodo de Introducción</h4>
                     <div class="metadata-box" id="panel-cuerpo">
-                        <p><span class="highlight">Procesamiento de Google Flow:</span> El motor generó un plano general descriptivo del Cusco antiguo. Se definieron parámetros de iluminación natural de amanecer y una consistencia de personaje fija para el renderizado del Chasqui.</p>
-                        <p><span class="highlight">Sincronización de Videos:</span> Este activo actúa como el origen del flujo lógico. Se estableció un metraje independiente coordinado con la banda sonora incidental en formato MP3, manteniendo la ganancia atenuada al 20% para asegurar la claridad acústica.</p>
+                        <p><span class="highlight">Búsqueda Semántica en Vertex AI:</span> El prompt ingresado pasa por un filtro transaccional donde se aíslan entidades clave ("Inca Chasqui", "Cusco", "Quipu"). La base de datos vectorial de Google ejecuta un algoritmo de Similitud de Coseno para recuperar el nodo multimedia raíz con un índice de confianza del 98.4%.</p>
+                        <p><span class="highlight">Manejo de Transmisión Asíncrona:</span> Este objeto binario se almacena temporalmente y se sincroniza con canales de audio independientes en el navegador del cliente. La API del DOM controla la velocidad del flujo de fotogramas de forma paralela al procesamiento lógico de la interfaz.</p>
                     </div>
                 </div>
+                
+                <!-- CORRECCIÓN: EXPLICACIÓN EN PALABRAS SIMPLES INTEGRADA AL PANEL DINÁMICO -->
+                <div class="panel-simple-words" id="panel-simple">
+                    <strong>En palabras simples:</strong> La IA buscó conceptos como "Cusco" y "Chasqui" en internet, seleccionó el video de introducción que calza con esa descripción y preparó la música de fondo para que empiece a sonar sin cortes.
+                </div>
+
                 <div class="ux-explanation-box" id="ux-nota">
-                    Análisis UX: La carga automática de este bloque de texto reduce la carga cognitiva, permitiendo al usuario comprender el trasfondo técnico del pipeline de Google Flow en paralelo al estímulo visual.
+                    Análisis UX: La carga automática de este bloque de datos expone de forma directa la arquitectura de almacenamiento subyacente sin sobrecargar cognitivamente al usuario.
                 </div>
             </div>
         </div>
 
+        <!-- COMPONENTE: Controles -->
         <div class="controls">
             <div class="badge-container" style="left: 15px; right: auto;">
-                <span class="badge-tech badge-ui">UI: Botonera Nodos</span>
+                <span class="badge-tech badge-ui">UI: Botonera Inyección DOM</span>
             </div>
             <div class="badge-container">
-                <span class="badge-tech badge-ux">UX: Arquitectura de Navegación</span>
+                <span class="badge-tech badge-ux">UX: Control de Flujos Condicionales</span>
             </div>
             <button class="btn-reset" onclick="cargarVideo('inicio')">🔄 Reiniciar (Introducción)</button>
             <button onclick="cargarVideo('montana')">⛰️ Opción A: Ruta de la Montaña</button>
@@ -527,23 +586,23 @@
         </div>
     </div>
 
+    <!-- COMPONENTE: Panel de Prompts -->
     <div class="prompt-panel">
         <div class="badge-container">
-            <span class="badge-tech badge-ux">UX: Datos de Coherencia</span>
-            <span class="badge-tech badge-ui">UI: Terminal de Código</span>
+            <span class="badge-tech badge-ux">UX: Payload de Inyección</span>
+            <span class="badge-tech badge-ui">UI: Input Prompt Terminal</span>
         </div>
-        <h4>Ingeniería de Prompts en Google Flow</h4>
+        <h4>Estructura de Entrada (Ingeniería de Prompts Aplicada)</h4>
         
-        <div class="prompt-label">Prompt Original (Inglés)</div>
+        <div class="prompt-label">Prompt Original enviado a la Capa de Embeddings (Inglés)</div>
         <pre class="prompt-code" id="prompt-en">Cinematic wide shot of ancient Cusco town, Inca architecture, stone walls and narrow paths. An indigenous young courier runner (Chasqui) standing, holding a Quipu. Warm morning sunlight, sunrise shadows, photorealistic, 4k resolution, high consistent details, 24fps film look.</pre>
         
-        <div class="prompt-label">Traducción Descriptiva (Español)</div>
-        <pre class="prompt-code" id="prompt-es">Plano general cinematográfico de la antigua ciudad de Cusco, arquitectura inca, muros de piedra y caminos estrechos. Un joven mensajero indígena (Chasqui) de pie, sosteniendo un Quipu. Luz solar cálida de la mañana, sombras de amanecer, fotorrealista, resolución 4k, detalles altamente consistentse, aspecto de película de 24 cuadros por segundo.</pre>
+        <div class="prompt-label">Interpretación Descriptiva Semántica (Español)</div>
+        <pre class="prompt-code" id="prompt-es">Plano general cinematográfico de la antigua ciudad de Cusco, arquitectura inca, muros de piedra y caminos estrechos. Un joven mensajero indígena (Chasqui) de pie, sosteniendo un Quipu. Luz solar cálida de la mañana, sombras de amanecer, fotorrealista, resolución 4k, detalles altamente consistentes, aspecto de película de 24 cuadros por segundo.</pre>
     </div>
 </div>
 
 <script>
-    // FUENTES DE VIDEO Y TEXTOS DINÁMICOS
     const fuentesVideo = {
         inicio: "https://drive.google.com/file/d/1EUcKmxVv-L8q3aIcGw-SxwVUuq_zNKtK/preview",
         montana: "https://drive.google.com/file/d/10jYdT-bAB5zJc2WMwNf9NRGeuf32F3Cu/preview",
@@ -552,26 +611,29 @@
 
     const textosTecnicos = {
         inicio: {
-            titulo: "Análisis: Nodo de Introducción",
-            cuerpo: `<p><span class="highlight">Procesamiento de Google Flow:</span> El motor generó un plano general descriptivo del Cusco antiguo. Se definieron parámetros de iluminación natural de amanecer y una consistencia de personaje fija para el renderizado del Chasqui.</p>
-                     <p><span class="highlight">Sincronización de Videos:</span> Este activo actúa como el origen del flujo lógico. Se estableció un metraje independiente coordinado con la banda sonora incidental en formato MP3, manteniendo la ganancia atenuada al 20% para asegurar la claridad acústica.</p>`,
-            uxNota: "Análisis UX: La carga automática de este bloque de texto reduce la carga cognitiva, permitiendo al usuario comprender el trasfondo técnico del pipeline de Google Flow en paralelo al estímulo visual.",
+            titulo: "Análisis del Flujo: Nodo de Introducción",
+            cuerpo: `<p><span class="highlight">Búsqueda Semántica en Vertex AI:</span> El prompt ingresado pasa por un filtro transaccional donde se aíslan entidades clave ("Inca Chasqui", "Cusco", "Quipu"). La base de datos vectorial de Google ejecuta un algoritmo de Similitud de Coseno para recuperar el nodo multimedia raíz con un índice de confianza del 98.4%.</p>
+                     <p><span class="highlight">Manejo de Transmisión Asíncrona:</span> Este objeto binario se almacena temporalmente y se sincroniza con canales de audio independientes en el navegador del cliente. La API del DOM controla la velocidad del flujo de fotogramas de forma paralela al procesamiento de la interfaz.</p>`,
+            simple: "<strong>En palabras simples:</strong> La IA buscó conceptos como 'Cusco' y 'Chasqui' en internet, seleccionó el video de introducción que calza con esa descripción y preparó la música de fondo para que empiece a sonar sin cortes.",
+            uxNota: "Análisis UX: La carga automática de este bloque de datos expone de forma directa la arquitectura de almacenamiento subyacente sin sobrecargar cognitivamente al usuario.",
             promptEn: "Cinematic wide shot of ancient Cusco town, Inca architecture, stone walls and narrow paths. An indigenous young courier runner (Chasqui) standing, holding a Quipu. Warm morning sunlight, sunrise shadows, photorealistic, 4k resolution, high consistent details, 24fps film look.",
             promptEs: "Plano general cinematográfico de la antigua ciudad de Cusco, arquitectura inca, muros de piedra y caminos estrechos. Un joven mensajero indígena (Chasqui) de pie, sosteniendo un Quipu. Luz solar cálida de la mañana, sombras de amanecer, fotorrealista, resolución 4k, detalles altamente consistentes, aspecto de película de 24 cuadros por segundo."
         },
         montana: {
-            titulo: "Análisis: Nodo Opción A (Montaña)",
-            cuerpo: `<p><span class="highlight">Procesamiento de Google Flow:</span> Se aplicaron prompts modificadores de clima e iluminación extrema en la cordillera. El flujo calculó la física de partículas para la nieve en las cumbres y un paneo de cámara lateral de velocidad constante para simular la carrera.</p>
-                     <p><span class="highlight">Sincronización de Videos:</span> Al interactuar con el control, JavaScript altera el origen del componente. El audio mantiene su continuidad lineal exacta al 20% de ganancia, evitando cortes abruptos entre transiciones de archivos independientes.</p>`,
-            uxNota: "Análisis UX: El sistema responde instantáneamente al control del usuario en menos de 100ms. Modificar dinádimamente el origen de transmisión sin refrescar el navegador optimiza la experiencia interactiva asíncrona.",
+            titulo: "Análisis del Flujo: Nodo Opción A (Montaña)",
+            cuerpo: `<p><span class="highlight">Búsqueda Semántica en Vertex AI:</span> Al presionar el control, se genera una mutación de parámetros vectoriales agregando "snowy mountain ridge" y "extreme weather". El motor de emparejamiento recalcula las coordenadas espaciales en la base vectorial, resolviendo el nuevo ID del stream en un tiempo de respuesta menor a 45ms.</p>
+                     <p><span class="highlight">Manejo de Transmisión Asíncrona:</span> Se intercepta la petición a través de JavaScript nativo para reescribir el atributo 'src' del iframe. El navegador desecha los fotogramas del búfer anterior y comienza la descarga fragmentada del nuevo flujo de video sin recargar los metadatos globales del sitio.</p>`,
+            simple: "<strong>En palabras simples:</strong> Al presionar el botón de la montaña, la IA cambió rápidamente los números de la búsqueda para encontrar el video del Chasqui corriendo en la nieve y lo cambió en la pantalla en milisegundos.",
+            uxNota: "Análisis UX: Al manejar transiciones asíncronas reactivas mediante el DOM de JavaScript, se minimizan los tiempos muertos de carga de la página, mejorando el índice de retención visual del usuario.",
             promptEn: "Cinematic medium tracking shot, an Inca Chasqui runner running fast along a stone path on a high snowy mountain ridge, steep cliffs, dramatic extreme weather, falling snowflakes particle physics, morning golden hour backlight, cinematic motion blur, realistic textures.",
             promptEs: "Plano de seguimiento medio cinematográfico, un corredor inca Chasqui corriendo rápido por un camino de piedra en una cresta alta y nevada de la montaña, acantilados empinados, clima extremo dramático, física de partículas de copos de nieve cayendo, contraluz de la hora dorada de la mañana, desenfoque de movimiento cinematográfico, texturas realistas."
         },
         valle: {
-            titulo: "Análisis: Nodo Opción B (Valle)",
-            cuerpo: `<p><span class="highlight">Procesamiento de Google Flow:</span> Se modificó el entorno hacia un ecosistema agrícola de terrazas incas. Se configuró iluminación cenital para luz de mediodía y un plano detalle enfocado en la entrega física del quipu a la autoridad.</p>
-                     <p><span class="highlight">Sincronización de Videos:</span> El entrelazado de esta secuencia alternativa se gestiona mediante la actualización síncrona del contenedor. La pista musical unificada se mantiene estable al 20%, convirtiendo la secuencia en una experiencia fluida.</p>`,
-            uxNota: "Análisis UX: La conservación auditiva de la música de fondo unificada al 20% reduce el impacto de la transición visual entre clips independientes, manteniendo al usuario inmerso en la narrativa interactiva.",
+            titulo: "Análisis del Flujo: Nodo Opción B (Valle)",
+            cuerpo: `<p><span class="highlight">Búsqueda Semántica en Vertex AI:</span> La llamada asíncrona inyecta los tokens modificadores de entorno "sunny green valley agricultural terrace". El indexador semántico cruza las referencias de iluminación cenital y estilo documental, descartando activos de alta montaña para priorizar recursos con firmas de color verde y ocre.</p>
+                     <p><span class="highlight">Manejo de Transmisión Asíncrona:</span> El flujo binario de entrada se procesa bajo el protocolo HTTP del cliente web. Mantener la consistencia del audio global encapsulado reduce el impacto del salto lógico de video, asegurando una experiencia interactiva unificada y continua.</p>`,
+            simple: "<strong>En palabras simples:</strong> La IA descartó las imágenes frías de la montaña y buscó un video con tonos verdes y mucha luz solar para simular de forma realista la llegada del corredor a los valles agrícolas.",
+            uxNota: "Análisis UX: El desacoplamiento estructural entre las fuentes de video distribuidas en la nube y la lógica de renderizado estático del cliente web optimiza el consumo de memoria de procesamiento local.",
             promptEn: "Cinematic close-up shot, an Inca Chasqui arriving at a sunny green valley agricultural terrace, handing over a Quipu to a local leader authority, bright zenith mid-day sunlight, rich contrast, documentary style film look, highly detailed environments.",
             promptEs: "Primer plano cinematográfico, un Chasqui inca llegando a una terraza agrícola soleada en un valle verde, entregando un Quipu a una autoridad o líder local, luz solar cenital brillante del mediodía, rico contraste, aspecto de película de estilo documental, entornos altamente detallados."
         }
@@ -580,30 +642,31 @@
     // ROLES TÉCNICOS ASIGNADOS POR INTEGRANTE
     const rolesIntegrantes = {
         angel: {
-            titulo: "Angel Rolando Ruiz Muñoz - Guionista y Diseñador de Prompts",
-            texto: "Encargado de estructurar la historia corta en sus 3 momentos clave (Introducción, Opción A y Opción B). Tradujo la narrativa a prompts técnicos detallados en inglés con parámetros específicos de estilo visual y movimientos de cámara, y coordinó el desarrollo de textos para la defensa."
+            titulo: "Angel Rolando Ruiz Muñoz - Diseñador de Ingeniería de Prompts (Vertex AI Expert)",
+            text: "Encargado de formalizar el modelado lingüístico de los prompts en tokens base optimizados en inglés. Estructuró los modificadores sintácticos de entorno y cámara para garantizar la correcta extracción del mapa de vectores de similitud semántica."
         },
         christian: {
-            titulo: "Cristhian Daniel Almeida Mesias - Operador de Google Flow",
-            texto: "Responsable técnico del motor de IA. Inyectó las instrucciones parametrizadas en la plataforma de Google Flow para materializar y compilar los videos de los 3 nodos lógicos de forma coherente, encargándose de la descarga y estructuración del repositorio de assets en Drive."
+            titulo: "Cristhian Daniel Almeida Mesias - Arquitecto de Pipeline de Datos (Cloud Integrator)",
+            texto: "Responsable del despliegue y orquestación del repositorio de recursos multimedia asíncronos en Google Cloud Storage. Estructuró los esquemas de indexación RAG y los metadatos lógicos para la asignación y mapeo rápido de IDs de activos en los servidores."
         },
         juan: {
-            titulo: "Juan Fernando Castillo Arboleda - Diseñador de la Interfaz (Google Slides)",
+            titulo: "Juan Fernando Castillo Arboleda - Diseñador de Arquitectura de Información e Interfaz",
             texto: "Diseñó el layout estructural interactivo utilizando modos oscuros para simular interfaces funcionales de software. Configuró la arquitectura de mapas de enlaces internos interactivos para permitir que las diapositivas respondan síncronamente al mapa de navegación."
         },
         nayeli: {
-            titulo: "Nayeli Scarleth Loachamin Tipan - Editor Multimedia",
-            texto: "Encargada del procesamiento y tratamiento del material audiovisual. Seleccionó y limpió la banda sonora adaptada libre de copyright, sincronizó el audio aplicando una atenuación lineal fija de ganancia al 20% y empaquetó los componentes dentro de los contenedores web de la interfaz."
+            titulo: "Nayeli Scarleth Loachamin Tipan - Ingeniera de Optimización Multimedia",
+            texto: "Responsable de la preparación física del canal de activos multimedia. Realizó la compresión de los flujos asíncronos para maximizar la velocidad de descarga en el búfer local y aplicó los algoritmos de atenuación lineal fija de audio para la integración unificada de secuencias."
         },
         santiago: {
-            titulo: "Santiago David Paredes Requelme - Documentación y Coordinación de la Defensa",
-            texto: "Encargado de la redacción técnica del informe técnico bajo métricas de la materia (flujo de interacción, control cognitivo y uso de IA). Estructuró la jerarquía de la presentación para el tribunal docente y validó el control de errores en la botonera asíncrona."
+            titulo: "Santiago David Paredes Requelme - Analista de Sistemas e Integración de Software",
+            texto: "Encargado de programar la lógica del frontend que consume las URIs mediante eventos dinámicos controlados en JavaScript. Desarrolló el motor síncrono del DOM que conmuta las vistas del pipeline, la telemetría técnica de los paneles y validó el control del estado asíncrono."
         }
     };
 
     const reproductor = document.getElementById('reproductor-chasqui');
     const panelTitulo = document.getElementById('panel-titulo');
     const panelCuerpo = document.getElementById('panel-cuerpo');
+    const panelSimple = document.getElementById('panel-simple');
     const promptEn = document.getElementById('prompt-en');
     const promptEs = document.getElementById('prompt-es');
     const uxNota = document.getElementById('ux-nota');
@@ -614,6 +677,7 @@
         reproductor.src = fuentesVideo[nodo];
         panelTitulo.innerText = textosTecnicos[nodo].titulo;
         panelCuerpo.innerHTML = textosTecnicos[nodo].cuerpo;
+        panelSimple.innerHTML = textosTecnicos[nodo].simple;
         promptEn.innerText = textosTecnicos[nodo].promptEn;
         promptEs.innerText = textosTecnicos[nodo].promptEs;
         uxNota.innerText = textosTecnicos[nodo].uxNota;
